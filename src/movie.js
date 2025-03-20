@@ -1,16 +1,13 @@
 const Movie = ({ mov, handleMovieClick }) => {
-    return (
-      <div className="card" style={{ width: "200px", margin: "10px" }}>
-        <img src={mov.image?.medium} className="card-img-top" alt={mov.title} />
-        <div className="card-body">
-      
-          <h5 className="card-title" style={{textAlign:'center'}}>{mov.name}</h5>
-          <button className="btn btn-primary" onClick={()=>handleMovieClick(mov)} style={{width:'100%'}}>
-            More
-          </button>
-        </div>
+  return (
+    <div className="movie-card" >
+      <img src={mov.image?.medium} className="movie-img" alt={mov.name} />
+      <div className="movie-body">
+        <h5 className="movie-title">{mov.name}</h5>
+        <button className="movie-btn" onClick={() => handleMovieClick(mov)}>More</button>
       </div>
-    );
-  };
-  
-  export default Movie;
+    </div>
+  );
+};
+
+export default Movie;

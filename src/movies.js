@@ -3,14 +3,14 @@ import Movie from "./movie";
 import MovieDetails from "./details";
 
 const Movies = ({ movie }) => {
-  const [selectedMovie, setSelectedMovie] = useState(null); 
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   const handleMovieClick = (mov) => {
-    setSelectedMovie(mov); 
+    setSelectedMovie(mov);
   };
 
   const handleBackToMovies = () => {
-    setSelectedMovie(null); 
+    setSelectedMovie(null);
   };
 
   return (
@@ -18,19 +18,13 @@ const Movies = ({ movie }) => {
       {selectedMovie ? (
         <MovieDetails movie={selectedMovie} onBack={handleBackToMovies} />
       ) : (
-        <div className="row">
+        <div className="movies-container">
           {movie.length >= 1 ? (
             movie.map((mov) => (
-              <div
-                className="col-md-4 py-3 py-md-0"
-                key={mov.id}
-                style={{ cursor: "pointer" }}
-              >
-                <Movie mov={mov} handleMovieClick={handleMovieClick} />
-              </div>
+              <Movie key={mov.id} mov={mov} handleMovieClick={handleMovieClick} />
             ))
           ) : (
-            <h2>No data available sorry</h2>
+            <h2 className="no-data">No data available, sorry</h2>
           )}
         </div>
       )}
