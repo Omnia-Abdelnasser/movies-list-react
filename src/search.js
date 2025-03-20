@@ -12,7 +12,7 @@ const Search = ({ search }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Search</a>
+        <a className="navbar-brand" href="#">movies</a>
         <button 
           className="navbar-toggler" 
           type="button" 
@@ -21,6 +21,7 @@ const Search = ({ search }) => {
           aria-controls="navbarSupportedContent" 
           aria-expanded="false" 
           aria-label="Toggle navigation"
+          style={{textAlign:'center'}}
         >
           <span className="navbar-toggler-icon" />
         </button>
@@ -29,7 +30,7 @@ const Search = ({ search }) => {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="enter the film"
               aria-label="Search"
               value={searchTerm}
               onChange={handleSearchChange}
